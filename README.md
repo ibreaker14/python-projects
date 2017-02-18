@@ -1,5 +1,6 @@
 # CECS-424-Sp2017-Assignment-2
 CECS 424 Python Project
+
 Author: Mingtau Li, 011110539
 
 ## Part One
