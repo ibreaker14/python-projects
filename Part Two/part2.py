@@ -19,7 +19,7 @@ def is_prime(input, divisor = 3):
 										# Other factors of N is comprised of a number a that is larger than x 
 										# and a number b that is smaller than x or a and b is equal to x
 		prime = True
-	elif (input % divisor) == 0:	# skip all even numbers
+	elif (input % divisor) == 0:	# if input can be modded, it is not prime
 		prime = False
 	else:  							# look for primes with odd divisors
 		prime = is_prime(input, divisor = divisor + 2)
