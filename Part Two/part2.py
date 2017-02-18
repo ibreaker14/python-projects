@@ -30,8 +30,8 @@ def is_prime(input, divisor_a = 3, divisor_b = 0):
 		prime = True
 	elif (input % divisor_a) == 0 or (input % divisor_b ) == 0:	# if input can be modded, it is not prime
 		prime = False
-	else:  							# look for primes with odd divisors
-		prime = is_prime(input, divisor_a + 2, divisor_b  - 2)
+	else:  							
+		prime = is_prime(input, divisor_a + 2, divisor_b  - 2)	# looks for primes with odd divisors
 	return prime
 
 # returns list of primes
