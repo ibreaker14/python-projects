@@ -221,7 +221,8 @@ if coins.find("THTHTHTHTH") != -1 or coins.find("HTHTHTHTHT") != -1:
 else:
 	print("You lost. Better luck next time")
 
-# keeps console alive
-os.system("pause")
+# keeps console alive in windows
+if os.name == 'nt':
+	os.system("pause")
 
 

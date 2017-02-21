@@ -75,5 +75,6 @@ print("sum of primes from",startVal,"to 2000000: ", sum_primes(startVal))
 
 print("Calculated execution time: ",datetime.now() - startTime) # calculated execution time
 
-# keeps console alive
-os.system("pause")
+# keeps console alive in windows
+if os.name == 'nt':
+	os.system("pause")
