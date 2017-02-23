@@ -1,5 +1,6 @@
 import os
 import math
+import sys
 from datetime import datetime
 
 # Author: Mingtau Li, 011110539
@@ -71,6 +72,13 @@ def sum_primes(n):
 startTime = datetime.now()	# starts timer
 
 startVal = 0
+
+if len(sys.argv) > 1:
+	try:
+		startVal = int((sys.argv[1]))
+	except ValueError:
+		print("Invalid argument. Start value will now revert back to 0:\n")
+
 print("sum of primes from",startVal,"to 2000000: ", sum_primes(startVal))
 
 print("Calculated execution time: ",datetime.now() - startTime) # calculated execution time

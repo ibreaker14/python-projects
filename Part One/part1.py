@@ -182,7 +182,7 @@ def choose_position():
 				# print cursor space			
 				sys.stdout.write("\r"+space_string)
 				sys.stdout.flush()
-				
+		
 # main game
 coins = "HHHHHTTTTT"
 
@@ -211,6 +211,12 @@ for x in range(5):
 			coins = swap(coins,chosenIndex)
 			print("move # ",x+1,"\n")
 			break
+
+	# if pattern matches before 5 moves, end game
+	if coins.find("THTHTHTHTH") != -1 or coins.find("HTHTHTHTHT") != -1:
+		print("Congrats! You won the game!")
+		print("\nFinal pattern: ",coins,"\n")
+		exit()
 
 # prints final pattern
 print("\nFinal pattern: ",coins,"\n")
