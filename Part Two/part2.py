@@ -63,13 +63,9 @@ def get_primes(n):
 def sum_primes(n):
 	sum = 0
 	list = get_primes(n)
-	print("number of primes found: ",len(list))
 	for i in range(len(list)):
 		sum = sum + list[i]
 	return sum
-
-
-startTime = datetime.now()	# starts timer
 
 startVal = 0
 
@@ -79,9 +75,9 @@ if len(sys.argv) > 1:
 	except ValueError:
 		print("Invalid argument. Start value will now revert back to 0:\n")
 
-print("sum of primes from",startVal,"to 2000000: ", sum_primes(startVal))
+print("Calculating...")
 
-print("Calculated execution time: ",datetime.now() - startTime) # calculated execution time
+print("\nsum of primes from",startVal,"to 2000000: ", sum_primes(startVal))
 
 # keeps console alive in windows
 if os.name == 'nt':
