@@ -11,29 +11,34 @@ from datetime import datetime
 # param:	input: int number to be checked
 		#	divisor_a: smallest divisor to be compared with
 		#	divisor_b: largest divisor to be compared with
-def is_prime(input, divisor_a = 3, divisor_b = 0):
-	if divisor_a == 3:
+def is_prime(input):
+	if input == 2 or input == 3:
+		return True
+	elif input < 2:
+		return False
+	elif input % 2 == 0:
+		return False
 
-		# prime rule: a number N is the square of a number x. 
-		# Other factors of N is comprised of a number a that is larger than x 
-		# and a number b that is smaller than x or a and b is equal to x	
-		divisor_b = math.floor(math.sqrt(input))
-		if divisor_b % 2 == 0: 
-			divisor_b = divisor_b + 1
+	divisor_a = 3
 
-	if input == 2: 				# if input is 2, it is prime
-		prime = True
-	elif input % 2 == 0:		# if divisible by 2, it is not prime
-		prime = False
-	elif input < 2:				# if input is less than 2, it is not prime
-		prime = False
-	elif divisor_a > divisor_b:	# if a and b meet, it is prime
-		prime = True
-	elif (input % divisor_a) == 0 or (input % divisor_b ) == 0:	# if input can be modded, it is not prime
-		prime = False
-	else:  							
-		prime = is_prime(input, divisor_a + 2, divisor_b  - 2)	# looks for primes with odd divisors
-	return prime
+	# prime rule: a number N is the square of a number x. 
+	# Other factors of N is comprised of a number a that is larger than x 
+	# and a number b that is smaller than x or a and b is equal to x	
+	divisor_b = math.floor(math.sqrt(input))
+	if divisor_b % 2 == 0: 
+		divisor_b = divisor_b + 1
+
+	# loop ends when a and b meets
+	while (divisor_a <= divisor_b):
+		if(input % divisor_a == 0 or input % divisor_b == 0):
+			return False;
+
+		divisor_a = divisor_a + 2
+		divisor_b = divisor_b - 2
+		
+
+	return True
+
 
 # returns list of primes
 # param:	n: starting number 
@@ -77,7 +82,7 @@ if len(sys.argv) > 1:
 
 print("Calculating...")
 
-print("\nsum of primes from",startVal,"to 2000000: ", sum_primes(startVal))
+print("sum of primes from",startVal,"to 2000000: ", sum_primes(startVal))
 
 # keeps console alive in windows
 if os.name == 'nt':
