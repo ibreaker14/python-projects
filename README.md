@@ -1,7 +1,7 @@
-# CECS-424-Sp2017-Assignment-2
+# Random Python Projects
 CECS 424 Python Project
 
-Author: Mingtau Li, 011110539
+Author: Mingtau Li
 
 ## Part One
 ### Coin Rearranger Game
